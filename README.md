@@ -4,13 +4,20 @@ Verdaccio authentication plugin by gitlab personal access token or oauth token o
 
 ## Installation
 
+### NPM
+
 ```bash
 npm install --global verdaccio-auth-gitlab
 ```
 
+### Docker
+
+Use the docker-compose in this directory.
+
 ## Configure
 
-config.yaml  
+config.yaml
+
 ```yaml
 auth:
   auth-gitlab:
@@ -87,10 +94,11 @@ auth:
 
 ## Role
 
-config.yaml  
+config.yaml
+
 ```yaml
 packages:
-  '@scope/*':
+  "@scope/*":
     access: $gitlab:user
     publish: $gitlab:user:xxx
 ```
@@ -102,20 +110,21 @@ packages:
 `$gitlab:group:xxx:level:40` Maintainer(Master) or owner of the group which path is `encodeURIComponent(xxx)`  
 `$gitlab:project:xxx:owner` Owner of the project which path is `encodeURIComponent(xxx)`  
 `$gitlab:project:xxx:member` Member of the project which path is `encodeURIComponent(xxx)`  
-`$gitlab:project:xxx:level:30` Developer or maintainer(master) or owner of the project which path is `encodeURIComponent(xxx)`  
+`$gitlab:project:xxx:level:30` Developer or maintainer(master) or owner of the project which path is `encodeURIComponent(xxx)`
 
 The following placeholder is allowed in `xxx`  
 `[pkgScope]` package scope  
-`[pkgName]` package name (without scope)  
+`[pkgName]` package name (without scope)
 
 e.g.  
 Access or publish a package `@scope/name`:  
 `$gitlab:group:[pkgScope]:owner` Owner of the group which path is `scope`  
-`$gitlab:project:[pkgName]:owner` Owner of the project which path is `name`  
+`$gitlab:project:[pkgName]:owner` Owner of the project which path is `name`
 
 ## [Valid access levels](https://docs.gitlab.com/ce/api/members.html)
 
 The access levels are defined in the `Gitlab::Access` module. Currently, these levels are recognized:
+
 ```
 10 => Guest access
 20 => Reporter access

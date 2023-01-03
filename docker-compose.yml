@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+  verdaccio:
+    restart: always
+    environment:
+      - VERDACCIO_PORT=4873
+      - VERDACCIO_USER_NAME=root
+    #  - VERDACCIO_PUBLIC_URL=https://npm.example.com
+    ports:
+      - "4877:4873"
+    image: ghcr.io/johanneslosch/verdaccio-auth-gitlab:2.0.0-beta.11
+    volumes:
+      - "./storage:/verdaccio/storage/data"
+      - "./config:/verdaccio/conf"
