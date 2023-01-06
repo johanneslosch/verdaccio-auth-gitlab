@@ -1,22 +1,15 @@
-# verdaccio-auth-gitlab
+# verdaccio-auth-gitlab-docker
 
 Verdaccio authentication plugin by gitlab personal access token or oauth token or ci job token.
+This project depends on [pfdgithub/verdaccio-auth-gitlab](https://github.com/pfdgithub/verdaccio-auth-gitlab).
 
-## Installation
+## Setup
 
-### NPM
-
-```bash
-npm install --global verdaccio-auth-gitlab
-```
-
-### Docker
-
-Use the docker-compose in this directory.
+You can use the [docker-compose](docker-compose.yml) and modify the [config file](./config/config.yaml)
 
 ## Configure
 
-config.yaml
+[config file](./config/config.yaml) default is config.yaml
 
 ```yaml
 auth:
