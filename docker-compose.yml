@@ -10,7 +10,7 @@ services:
     #  - VERDACCIO_PUBLIC_URL=https://npm.example.com
     ports:
       - "4877:4873"
-    image: ghcr.io/johanneslosch/verdaccio-auth-gitlab:2.0.0-beta.11
+    image: johanneslosch/verdaccio-auth-gitlab:2.0.0-beta.11
     volumes:
       - "./storage:/verdaccio/storage/data"
       - "./config:/verdaccio/conf"
