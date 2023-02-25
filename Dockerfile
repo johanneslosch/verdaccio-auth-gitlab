@@ -1,4 +1,4 @@
-FROM verdaccio/verdaccio:5.21.1
+FROM verdaccio/verdaccio:5.21.2
 LABEL maintainer="https://github.com/johanneslosch/verdaccio-auth-gitlab"
 
 USER root
